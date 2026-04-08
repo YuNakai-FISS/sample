@@ -127,3 +127,20 @@ div.g {
   background-color: #2F92DD;
   border: 2px solid #000;
 }
+
+/* 固定メニュー */
+ul {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul li {
+  display: inline-block;
+  width: 100px;
+  background-color: #dddddd;
+  text-align: center;
+  padding: 5px;
+}
