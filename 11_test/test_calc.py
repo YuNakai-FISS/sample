@@ -1,6 +1,12 @@
 from calc import add
+import pytest
 
-# 加算関数 add のテスト
-def test_add():
-    result = add(2, 3)
-    assert result == 6
+@pytest.mark.parametrize("a, b, expected", [
+    (2, 3, 5),
+    (-1, 1, 0),
+    (0, 0, 0),
+    (10, 5, 15),
+])
+
+def test_add_param(a, b, expected):
+    assert add(a, b) == expected
