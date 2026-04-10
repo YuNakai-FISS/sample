@@ -100,10 +100,10 @@ def test_delete_task(client):
 
     # タスクIDを取得
     # 【C】
-    delete_task_id = Task.query.first().id
+    created_task_id = Task.query.first().id
 
     # タスクを削除
-    response = client.delete(f'/tasks/{delete_task_id}')
+    response = client.delete(f'/tasks/{created_task_id}')
 
     # レスポンスのステータスコードが200であることを確認
     assert response.status_code == 200
@@ -116,5 +116,5 @@ def test_delete_task(client):
 
     # 削除後タスクが存在しないことを確認
     with app.app_context():
-        deleted_task = db.session.get(Task, delete_task_id)
+        deleted_task = db.session.get(Task, created_task_id)
         assert deleted_task is None
